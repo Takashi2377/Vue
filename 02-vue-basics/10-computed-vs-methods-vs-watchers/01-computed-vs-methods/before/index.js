@@ -12,7 +12,7 @@ const app = Vue.createApp({
   },
   computed: {
     vueBlogs() {
-      return this.blogPosts.filter((blog) => blog.includes("vue"));
+      return this.blogPosts.filter((blog) => blog.includes("Vue"));
     },
   },
 });
