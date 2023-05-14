@@ -8,7 +8,26 @@ const app = Vue.createApp({
         "React 18 新特性介绍",
         "JavaScript 基础语法概览",
       ],
+      newBlog: "",
     };
+  },
+  computed: {
+    count() {
+      return this.blogPosts.length;
+    },
+  },
+  watch: {
+    blogPosts: {
+      handler(newVal) {
+        this.count = newVal.length;
+      },
+      deep: true,
+    },
+    newBlog(newVal) {
+      setTimeout(() => {
+        this.blogPosts.push(newVal);
+      }, 2000);
+    },
   },
 });
 app.mount("#app");
