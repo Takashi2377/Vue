@@ -11,13 +11,20 @@ const app = Vue.createApp({
       newBlog: "",
     };
   },
-  methods: {},
-  watch: {
-    newBlog(newVal) {
+  methods: {
+    addNewBlog() {
       setTimeout(() => {
-        this.blogPosts.push(newVal);
+        this.blogPosts.push(this.newBlog);
         this.count += 1;
       }, 2000);
+    },
+    click() {
+      this.newBlog = "野格a配方";
+    },
+  },
+  watch: {
+    newBlog(newVal) {
+      this.addNewBlog();
     },
   },
 });
