@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="lib/vue.global.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>表单输入数据处理</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="input-field">
+        <label for="userName">用戶名:</label>
+        <input type="text" id="userName" @input="handleInput" />
+      </div>
+      <div class="result">
+        <p>您輸入的用戶名為 : {{userName}}</p>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
