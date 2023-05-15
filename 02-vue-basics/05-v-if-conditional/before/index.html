@@ -10,6 +10,11 @@
   </head>
   <body>
     <div id="app">
+      <p v-if="books.length == 0">目前沒有任何書籍</p>
+      <h2 v-else-if="books.length == 1">{{books[0]}}</h2>
+      <ul v-else>
+        <li v-for="book in books">{{book}}</li>
+      </ul>
     </div>
     <script src="index.js"></script>
   </body>

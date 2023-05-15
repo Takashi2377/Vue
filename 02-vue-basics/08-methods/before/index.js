@@ -10,5 +10,10 @@ const app = Vue.createApp({
       return this.showAnswer ? "隐藏答案" : "显示答案";
     },
   },
+  methods: {
+    toggleAnswer() {
+      this.showAnswer = !this.showAnswer;
+    },
+  },
 });
 app.mount("#app");
