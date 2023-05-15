@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="lib/vue.global.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>根据条件添加或删除 class 样式</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <p :class="[textClass,stateClass,{hide: isHidden}]">段落展示77777</p>
+      <button @click="isHidden = !isHidden">切換顯示</button>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
