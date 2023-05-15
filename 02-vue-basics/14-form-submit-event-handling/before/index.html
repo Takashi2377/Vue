@@ -3,17 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="lib/vue.global.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Vue 表单事件处理</title>
   </head>
   <body>
     <div id="app">
-      <form class="form">
+      <form class="form" @submit.prevent="handleSubmit">
         <label for="username">用户名：</label>
         <input id="username" type="text" v-model="username" />
         <label for="gender">性别：</label>
@@ -53,17 +50,14 @@
           /><span>全栈</span>
         </div>
         <label for="occupation">职业：</label>
-        <select
-          name="occupation"
-          id="occupation"
-          v-model="occupation"
-        >
+        <select name="occupation" id="occupation" v-model="occupation">
           <option value="frontend">前端工程师</option>
           <option value="backend">后端工程师</option>
           <option value="fullstack">全栈工程师</option>
         </select>
         <label for="intro">自我介绍：</label>
         <textarea id="intro" rows="10" v-model="intro"></textarea>
+        <button type="submit">send</button>
       </form>
       <div class="result">
         <ul>
