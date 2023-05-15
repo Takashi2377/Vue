@@ -6,9 +6,6 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    handleInput(e) {
-      this.username = e.target.value;
-    },
     resetUsername() {
       this.username = "";
     },
