@@ -13,7 +13,10 @@
   </head>
   <body>
     <div id="app">
-      <div></div>
+      <div>
+        <p v-once> list 初始長度: {{list.length}}</p>
+        <p> list 長度: {{list.length}}</p>
+        <button @click="list.push(list.length+1)">Add</button>
     </div>
     <script src="index.js"></script>
   </body>
