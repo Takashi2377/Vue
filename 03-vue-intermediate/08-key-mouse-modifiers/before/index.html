@@ -11,10 +11,10 @@
   <body>
     <div id="app">
       <div>
-        <ul>
+        <ul @mousedown.left="comments.reverse()">
           <li v-for="content in comments">{{ content }}</li>
         </ul>
-        <input type="text" />
+        <input type="text" v-model="comment" @keyup.ctrl.enter="addComment" />
       </div>
     </div>
     <script src="index.js"></script>
