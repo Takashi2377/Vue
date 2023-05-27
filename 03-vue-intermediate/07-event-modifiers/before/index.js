@@ -3,6 +3,13 @@ const app = Vue.createApp({
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    handleULClick() {
+      alert(0);
+    },
+    handleLIClick() {
+      alert(1);
+    },
+  },
 });
 app.mount("#app");

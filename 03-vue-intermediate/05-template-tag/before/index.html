@@ -11,10 +11,10 @@
   <body>
     <div id="app">
       <div>
-        <div v-if="show" class="content">
+        <template v-if="show" class="content">
           <h1>标题</h1>
           <p>这是一个段落</p>
-        </div>
+        </template>
         <button @click="show = !show">切换显示</button>
       </div>
     </div>
