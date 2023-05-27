@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="lib/vue.global.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>表单输入相关的修饰符</title>
@@ -14,9 +11,9 @@
   <body>
     <div id="app">
       <div>
-        <input type="text" v-model="username" />
+        <input type="text" v-model.lazy.trim="username" />
         <p>{{ username }}</p>
-        <input type="text" v-model="year" />
+        <input type="text" v-model.number="year" />
         <p>{{ typeof year }}</p>
       </div>
     </div>

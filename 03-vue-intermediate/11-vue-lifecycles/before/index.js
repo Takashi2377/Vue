@@ -12,5 +12,8 @@ const app = Vue.createApp({
       this.posts = postsData;
     },
   },
+  created() {
+    this.fetchPosts();
+  },
 });
 const vm = app.mount("#app");
