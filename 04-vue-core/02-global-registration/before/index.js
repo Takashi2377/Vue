@@ -20,4 +20,13 @@ app.component("WordCount", {
   `,
 });
 
+app.component("WordCountApp", {
+  template: `
+  <div>
+    <h1>野格炸彈</h1>
+    <WordCount/>
+  </div>
+  `,
+});
+
 const vm = app.mount("#app");
