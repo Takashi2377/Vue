@@ -4,6 +4,7 @@
     <p>你共输入了 {{ count }} 个字符</p>
   </div>
 </template>
+
 <script>
 export default {
   data() {
