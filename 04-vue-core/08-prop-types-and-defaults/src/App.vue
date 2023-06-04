@@ -1,12 +1,12 @@
 <template>
   <main>
     <div>
-      <!-- <PropTypes
+      <PropTypes
         :num="10"
         :bool="true"
         :obj="{ name: '张三' }"
         :array="[1, 2, 3, 4]"
-      /> -->
+      />
       <TypeValidation name="张三" :age="-20" />
     </div>
   </main>
