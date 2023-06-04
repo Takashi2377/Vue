@@ -1,10 +1,15 @@
 <template>
   <main>
     <div>
-      <BaseCard title="卡片容器">
-        <p>这是卡片的内容</p>
-        <p>可以插入任何 HTML 模板</p>
-        <a href="#">这是一个超链接</a>
+      <BaseCard>
+        <template #title>
+          <h2>卡片標題</h2>
+        </template>
+        <template #content>
+          <p>content</p>
+          <p>template</p>
+          <a href="#">Link</a>
+        </template>
       </BaseCard>
     </div>
   </main>

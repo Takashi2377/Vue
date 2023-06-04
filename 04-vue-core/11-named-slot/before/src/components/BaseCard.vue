@@ -1,18 +1,15 @@
 <template>
   <div class="card">
-    <div class="title">{{ title }}</div>
+    <div class="title">
+      <slot name="title"></slot>
+    </div>
     <div class="content">
-      <slot></slot>
-      <!-- <slot>
-        <p>默认卡片内容</p>
-      </slot> -->
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
 <script>
-export default {
-  props: ["title"],
-};
+export default {};
 </script>
 <style scoped>
 .card {
