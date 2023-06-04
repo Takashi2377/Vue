@@ -5,6 +5,7 @@
         v-for="post in posts"
         :key="post.id"
         v-bind="post"
+        class="blogLink"
       />
     </div>
   </main>
@@ -54,5 +55,9 @@ body {
   max-width: 100%;
   display: grid;
   place-items: center;
+}
+
+.blogLink a {
+  color: bisque;
 }
 </style>

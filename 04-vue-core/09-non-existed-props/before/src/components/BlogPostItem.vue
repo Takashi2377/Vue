@@ -6,5 +6,9 @@
 <script>
 export default {
   props: ["link", "title"],
+  inheritAttrs: false,
+  mounted() {
+    console.log(this.$attrs.class);
+  },
 };
 </script>
