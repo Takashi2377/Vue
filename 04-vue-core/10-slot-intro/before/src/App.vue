@@ -1,7 +1,11 @@
 <template>
   <main>
     <div>
-      <BaseCard title="卡片容器"> </BaseCard>
+      <BaseCard title="卡片容器">
+        <!-- <p>content</p>
+        <p>template</p>
+        <a href="#">超連結</a> -->
+      </BaseCard>
     </div>
   </main>
 </template>
