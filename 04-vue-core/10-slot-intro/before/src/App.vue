@@ -2,9 +2,9 @@
   <main>
     <div>
       <BaseCard title="卡片容器">
-        <!-- <p>content</p>
+        <p>content</p>
         <p>template</p>
-        <a href="#">超連結</a> -->
+        <a href="#">超連結</a>
       </BaseCard>
     </div>
   </main>
