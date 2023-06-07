@@ -5,6 +5,7 @@
         v-for="post in posts"
         :key="post.id"
         v-bind="post"
+        @deletePost="handleDeletePost"
       />
     </div>
   </main>
@@ -25,6 +26,11 @@ export default {
         { id: 3, title: "Post 3", link: "https://some.url.com" },
       ],
     };
+  },
+  methods: {
+    handleDeletePost(id) {
+      this.posts = this.posts.filter((p) => p.id !== id);
+    },
   },
 };
 </script>
