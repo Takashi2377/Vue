@@ -1,7 +1,11 @@
 <template>
   <main>
     <div class="container">
-      <PaginationComponent :totalPage="totalPage" />
+      <PaginationComponent
+        :totalPage="totalPage"
+        :defaultCurrentPage="currentPage"
+      />
+      <button @click="totalPage += 1">Add Page</button>
     </div>
   </main>
 </template>
@@ -16,6 +20,7 @@ export default {
   data() {
     return {
       totalPage: 6,
+      currentPage: 4,
     };
   },
 };

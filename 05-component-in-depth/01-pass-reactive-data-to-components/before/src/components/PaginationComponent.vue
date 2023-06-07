@@ -1,13 +1,22 @@
 <template>
   <div>
-    <button v-for="n in totalPage">
+    <p>目前頁{{ currentPage }}</p>
+    <button v-for="n in totalPage" @click="changePage(n)">
       {{ n }}
     </button>
   </div>
 </template>
 <script>
 export default {
-  props: ["totalPage"],
+  props: ["totalPage", "defaultCurrentPage"],
+  data() {
+    return { currentPage: this.defaultCurrentPage };
+  },
+  methods: {
+    changePage(n) {
+      this.currentPage = n;
+    },
+  },
 };
 </script>
 <style scoped>
