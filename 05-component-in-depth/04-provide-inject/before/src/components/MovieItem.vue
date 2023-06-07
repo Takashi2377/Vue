@@ -8,7 +8,7 @@
 import MovieTitle from "./MovieTitle.vue";
 export default {
   components: { MovieTitle },
-  props: ["title", "description"],
+  props: ["description"],
 };
 </script>
 <style scoped>

@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  props: ["title"],
+  inject: ["title"],
 };
 </script>
 <style scoped>
