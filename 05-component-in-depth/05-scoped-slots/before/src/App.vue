@@ -1,9 +1,15 @@
 <template>
   <main>
     <div>
-      <ContactList>
+      <!-- <ContactList v-slot="{ contact }">
         <p>{{ contact.name }}</p>
         <p>{{ contact.email }}</p>
+      </ContactList> -->
+      <ContactList>
+        <template v-slot:list="props">
+          <p>{{ props.contact.name }}</p>
+          <p>{{ props.contact.email }}</p>
+        </template>
       </ContactList>
     </div>
   </main>
