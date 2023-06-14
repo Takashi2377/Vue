@@ -1,8 +1,12 @@
 <template>
   <main>
     <div>
-      <SearchInput v-model="searchTerm" />
-      <p>{{ searchTerm }}</p>
+      <SearchInput
+        v-model:searchTerm="searchQuery"
+        v-model:category="category"
+      />
+      <p>{{ searchQuery }}</p>
+      <p>{{ category }}</p>
     </div>
   </main>
 </template>
@@ -16,7 +20,8 @@ export default {
   },
   data() {
     return {
-      searchTerm: "",
+      searchQuery: "",
+      category: "default",
     };
   },
 };

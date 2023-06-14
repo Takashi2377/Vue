@@ -3,15 +3,27 @@
     ><span>搜索：</span
     ><input
       type="text"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      :value="searchTerm"
+      @input="$emit('update:searchTerm', $event.target.value)"
     />
+  </label>
+  <label>
+    <span>类别：</span>
+    <select
+      :value="category"
+      @change="$emit('update:category', $event.target.value)"
+    >
+      <option value="default">默认</option>
+      <option value="fontend">前端</option>
+      <option value="backend">后端</option>
+      <option value="fullstack">全栈</option>
+    </select>
   </label>
 </template>
 <script>
 export default {
-  props: ["modelValue"],
-  emits: ["update:modelValue"],
+  props: ["searchTerm", "category"],
+  emits: ["update:searchTerm", "update:category"],
 };
 </script>
 <style scoped>
