@@ -15,6 +15,11 @@ export default {
       degree: 0,
     };
   },
+  computed: {
+    degreeStr() {
+      return this.degree + "deg";
+    },
+  },
 };
 </script>
 
@@ -57,6 +62,7 @@ main {
   border-radius: 8px;
   background-color: hsl(280deg, 100%, 60%);
   box-shadow: 0 0 24px hsl(280deg, 100%, 70%, 0.5);
+  transform: rotate(v-bind(degreeStr));
 }
 
 .control {
