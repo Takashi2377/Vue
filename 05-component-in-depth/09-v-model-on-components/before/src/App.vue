@@ -1,7 +1,8 @@
 <template>
   <main>
     <div>
-      <SearchInput />
+      <SearchInput v-model="searchTerm" />
+      <p>{{ searchTerm }}</p>
     </div>
   </main>
 </template>
@@ -12,6 +13,11 @@ import SearchInput from "./components/SearchInput.vue";
 export default {
   components: {
     SearchInput,
+  },
+  data() {
+    return {
+      searchTerm: "",
+    };
   },
 };
 </script>

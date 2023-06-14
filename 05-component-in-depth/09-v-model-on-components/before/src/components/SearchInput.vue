@@ -1,11 +1,18 @@
 <template>
   <label>
     <span>搜索：</span>
-    <input type="text" />
+    <input
+      type="text"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
   </label>
 </template>
 <script>
-export default {};
+export default {
+  props: ["modelValue"],
+  emits: ["update:modelValue"],
+};
 </script>
 <style scoped>
 input {
