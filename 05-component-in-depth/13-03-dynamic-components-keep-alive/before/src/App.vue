@@ -1,7 +1,7 @@
 <template>
   <main>
     <div>
-      <Component :is="currentForm" />
+      <KeepAlive> <Component :is="currentForm" /> </KeepAlive>
       <div class="buttons">
         <button
           v-if="currentForm === 'RegisterForm'"
@@ -10,9 +10,7 @@
           下一步
         </button>
         <template v-else-if="currentForm === 'ProfileForm'">
-          <button @click="currentForm = 'RegisterForm'">
-            上一步
-          </button>
+          <button @click="currentForm = 'RegisterForm'">上一步</button>
           <button>完成</button>
         </template>
       </div>
