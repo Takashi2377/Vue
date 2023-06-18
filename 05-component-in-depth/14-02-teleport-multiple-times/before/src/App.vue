@@ -1,7 +1,8 @@
 <template>
   <main>
     <div class="container">
-      <AlertBox>这是一段消息</AlertBox>
+      <button @click="msgs.push(`2222222A${msgs.length + 1}`)">Add</button>
+      <AlertBox v-for="msg in msgs">{{ msg }}</AlertBox>
     </div>
   </main>
 </template>
@@ -11,6 +12,11 @@ import AlertBox from "./components/AlertBox.vue";
 export default {
   components: {
     AlertBox,
+  },
+  data() {
+    return {
+      msgs: [],
+    };
   },
 };
 </script>

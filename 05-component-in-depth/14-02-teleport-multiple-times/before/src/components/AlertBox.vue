@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <Teleport to="#messages">
     <div v-if="show" class="alertBox">
       <div class="closeIcon" @click="show = false">X</div>
       <div class="content">
@@ -15,6 +15,11 @@ export default {
       show: true,
     };
   },
+  mounted() {
+    setTimeout(() => {
+      this.show = false;
+    }, 3000);
+  },
 };
 </script>
 <style scoped>
@@ -25,9 +30,9 @@ export default {
   border-radius: 8px;
   padding: 24px;
 
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
+  position: relative;
+  /* right: 12px;
+  bottom: 12px; */
 }
 
 .content {
