@@ -1,9 +1,23 @@
 <template>
-  <input type="text" />
+  <input type="text" ref="inputControl" v-model="inputText" />
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      inputText: "",
+    };
+  },
+  methods: {
+    blur() {
+      this.$refs.inputControl.blur();
+    },
+  },
+  mounted() {
+    this.$refs.inputControl.focus();
+  },
+};
 </script>
 
 <style scoped>

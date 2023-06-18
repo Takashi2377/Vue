@@ -1,7 +1,7 @@
 <template>
   <main>
     <div>
-      <AutoFocus />
+      <AutoFocus ref="autoFocus" />
     </div>
   </main>
 </template>
@@ -11,6 +11,12 @@ import AutoFocus from "./components/AutoFocus.vue";
 export default {
   components: {
     AutoFocus,
+  },
+  mounted() {
+    setTimeout(() => {
+      console.log(this.$refs.autoFocus.inputText);
+      this.$refs.autoFocus.blur();
+    }, 5000);
   },
 };
 </script>
