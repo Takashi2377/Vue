@@ -5,4 +5,7 @@ const app = createApp(App);
 
 // 定义自定义指令
 
+app.directive("fSize", (el, binding) => {
+  el.style.fontSize = binding.value + (binding.arg || "px");
+});
 app.mount("#app");

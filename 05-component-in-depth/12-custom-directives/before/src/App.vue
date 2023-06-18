@@ -1,11 +1,22 @@
 <template>
   <main>
-    <div></div>
+    <div>
+      <p v-fSize:[unit]="fontSize">顯示一個段落</p>
+      <button class="fontSize increase" @click="fontSize += 1">A</button>
+      <button class="fontSize decrease" @click="fontSize -= 1">a</button>
+    </div>
   </main>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      fontSize: 18,
+      unit: "em",
+    };
+  },
+};
 </script>
 
 <style>
