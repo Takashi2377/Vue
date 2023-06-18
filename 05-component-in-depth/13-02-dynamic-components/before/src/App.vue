@@ -1,11 +1,39 @@
 <template>
   <main>
-    <div></div>
+    <div>
+      <Component :is="currentForm" />
+      <div class="buttons">
+        <button
+          v-if="currentForm == 'RegisterForm'"
+          @click="currentForm = 'ProfileForm'"
+        >
+          下一步
+        </button>
+        <button
+          v-if="currentForm == 'ProfileForm'"
+          @click="currentForm = 'RegisterForm'"
+        >
+          上一步
+        </button>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
-export default {};
+import RegisterForm from "./components/RegisterForm.vue";
+import ProfileForm from "./components/ProfileForm.vue";
+export default {
+  components: {
+    RegisterForm,
+    ProfileForm,
+  },
+  data() {
+    return {
+      currentForm: "RegisterForm",
+    };
+  },
+};
 </script>
 
 <style>
