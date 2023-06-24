@@ -10,6 +10,9 @@ export default {
   components: {
     AppListItem,
   },
+  mounted() {
+    throw new Error("發生異常");
+  },
 };
 </script>
 <style scoped></style>
