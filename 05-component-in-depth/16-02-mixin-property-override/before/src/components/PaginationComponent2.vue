@@ -5,12 +5,22 @@
     </a>
     <p>当前页：{{ currentPage }}</p>
   </div>
+  <p v-if="showTotal">總計 : {{ totalPage }}</p>
 </template>
 <script>
 import PaginationMixin from "../mixins/PaginationMixin";
 
 export default {
   mixins: [PaginationMixin],
+  props: ["showTotal"],
+  data() {
+    return {
+      currentPage: 1,
+    };
+  },
+  mounted() {
+    console.log("執行2");
+  },
 };
 </script>
 <style scoped>

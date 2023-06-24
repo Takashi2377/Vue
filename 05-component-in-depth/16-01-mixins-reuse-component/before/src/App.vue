@@ -5,16 +5,22 @@
         :totalPage="totalPage"
         :defaultCurrentPage="currentPage"
       />
+      <PaginationComponent2
+        :totalPage="totalPage"
+        :defaultCurrentPage="currentPage"
+      />
     </div>
   </main>
 </template>
 
 <script>
 import PaginationComponent from "./components/PaginationComponent.vue";
+import PaginationComponent2 from "./components/PaginationComponent2.vue";
 
 export default {
   components: {
     PaginationComponent,
+    PaginationComponent2,
   },
   data() {
     return {

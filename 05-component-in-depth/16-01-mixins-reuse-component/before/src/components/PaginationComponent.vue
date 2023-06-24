@@ -7,18 +7,9 @@
   </div>
 </template>
 <script>
+import PaginationMixin from "../mixins/PaginationMixin";
 export default {
-  props: ["totalPage", "defaultCurrentPage"],
-  data() {
-    return {
-      currentPage: this.defaultCurrentPage,
-    };
-  },
-  methods: {
-    changePage(page) {
-      this.currentPage = page;
-    },
-  },
+  mixins: [PaginationMixin],
 };
 </script>
 <style scoped></style>

@@ -8,6 +8,7 @@
       <PaginationComponent2
         :totalPage="totalPage"
         :defaultCurrentPage="currentPage"
+        showTotal="true"
       />
     </div>
   </main>

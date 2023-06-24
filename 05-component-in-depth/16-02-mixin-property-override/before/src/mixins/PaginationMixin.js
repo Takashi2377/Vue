@@ -10,6 +10,9 @@ const PaginationMixin = {
       this.currentPage = page;
     },
   },
+  mounted() {
+    console.log("執行");
+  },
 };
 
 export default PaginationMixin;
