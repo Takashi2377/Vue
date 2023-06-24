@@ -1,18 +1,32 @@
 <template>
-  <!-- nav -->
+  <nav>
+    <a href="#" @click.prevent="currentPage = 'HomePage'">首頁</a>
+    <a href="#" @click.prevent="currentPage = 'ProductPage'">產品頁</a>
+  </nav>
+
   <main>
-    <!--component-->
+    <component :is="currentPage" />
   </main>
 </template>
 
 <script>
 import HomePage from "./components/HomePage.vue";
-import ProductPage from "./components/ProductPage.vue";
+import { defineAsyncComponent } from "vue";
+// import ProductPage from "./components/ProductPage.vue";
+
+const ProductPage = defineAsyncComponent(() =>
+  import("./components/ProductPage.vue")
+);
 
 export default {
   components: {
     HomePage,
     ProductPage,
+  },
+  data() {
+    return {
+      currentPage: "HomePage",
+    };
   },
 };
 </script>
