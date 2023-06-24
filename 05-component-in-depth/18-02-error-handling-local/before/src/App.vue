@@ -1,6 +1,7 @@
 <template>
   <main>
-    <AppList :data="data" />
+    <p v-if="error">頂級錯誤</p>
+    <AppList :data="data" v-else />
   </main>
 </template>
 
@@ -14,7 +15,12 @@ export default {
   data() {
     return {
       data: [1, 2, 3],
+      error: false,
     };
+  },
+  errorCaptured(err, instance, info) {
+    this.error = true;
+    return false;
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
-  <ul>
+  <p v-if="error">出錯囉!</p>
+  <ul v-else>
     <AppListItem v-for="item in data">{{ item }}</AppListItem>
   </ul>
 </template>
@@ -10,8 +11,13 @@ export default {
   components: {
     AppListItem,
   },
-  mounted() {
-    throw new Error("发生了异常");
+  data() {
+    return {
+      error: false,
+    };
+  },
+  errorCaptured(err, instance, info) {
+    this.error = true;
   },
 };
 </script>
