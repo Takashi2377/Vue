@@ -1,6 +1,7 @@
 <template>
   <main>
     <div class="container">
+      <h1>{{ siteTitle }}</h1>
       <PaginationComponent
         :totalPage="totalPage"
         :defaultCurrentPage="currentPage"
@@ -10,6 +11,7 @@
         :defaultCurrentPage="currentPage"
         showTotal="true"
       />
+      <BaseButton :defaultCurrentPage="currentPage" />
     </div>
   </main>
 </template>
@@ -17,11 +19,13 @@
 <script>
 import PaginationComponent from "./components/PaginationComponent.vue";
 import PaginationComponent2 from "./components/PaginationComponent2.vue";
+import BaseButton from "./components/BaseButton.vue";
 
 export default {
   components: {
     PaginationComponent,
     PaginationComponent2,
+    BaseButton,
   },
   data() {
     return {
