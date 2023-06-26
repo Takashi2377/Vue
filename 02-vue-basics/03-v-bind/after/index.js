@@ -2,7 +2,8 @@
 const app = Vue.createApp({
   data() {
     return {
-      link: "https://zxuqian.cn",
+      link: "https://google.com",
+      water: "https://www.water.gov.tw/ch",
     };
   },
 });
