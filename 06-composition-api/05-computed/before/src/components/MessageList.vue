@@ -1,12 +1,13 @@
 <template>
   <div>
+    <input type="text" placeholder="搜索消息" v-model="searchTerm" />
     <ul>
-      <li v-for="msg in messages" :key="msg.id">{{ msg.content }}</li>
+      <li v-for="msg in searchedMessages" :key="msg.id">{{ msg.content }}</li>
     </ul>
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export default {
   setup() {
@@ -17,7 +18,16 @@ export default {
       { id: 4, content: "这是一条消息提醒4" },
     ]);
 
-    return { messages };
+    const searchTerm = ref("");
+
+    const searchedMessages = computed(() => {
+      if (searchTerm === "") return messages.value;
+      return messages.value.filter((msg) => {
+        return msg.content.includes(searchTerm.value);
+      });
+    });
+
+    return { messages, searchTerm, searchedMessages };
   },
 };
 </script>

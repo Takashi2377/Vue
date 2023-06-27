@@ -1,13 +1,19 @@
 <template>
   <div>
+    <h2>{{ options.title }}</h2>
+    <p>
+      用戶:{{ options.user.name }}, 活躍 {{ options.user.active ? "Y" : "N" }}
+    </p>
     <ul>
       <li v-for="msg in messages" :key="msg.id">{{ msg.content }}</li>
     </ul>
     <button @click="messages = []">删除全部</button>
+    <button @click="options.title = '修改後標題'">修改標題</button>
+    <button @click="options.user.name = 'Keria'">修改姓名</button>
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 
 export default {
   setup() {
@@ -18,9 +24,17 @@ export default {
       { id: 4, content: "这是一条消息提醒4" },
     ]);
 
-    console.log(messages.value);
+    const options = reactive({
+      title: "消息列表",
+      user: {
+        name: "Deft",
+        active: true,
+      },
+    });
 
-    return { messages };
+    console.log(messages);
+
+    return { messages, options };
   },
 };
 </script>
