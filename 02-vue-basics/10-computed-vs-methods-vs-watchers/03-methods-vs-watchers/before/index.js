@@ -15,7 +15,6 @@ const app = Vue.createApp({
     addNewBlog() {
       setTimeout(() => {
         this.blogPosts.push(this.newBlog);
-        this.count += 1;
       }, 2000);
     },
     click() {
