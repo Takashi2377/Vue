@@ -33,6 +33,16 @@ export default {
       },
     });
 
+    watch(
+      () => options.value,
+      (newVal, oldVal) => {
+        console.log(newVal, oldVal);
+      },
+      {
+        deep: true,
+      }
+    );
+
     return { messages, options };
   },
 };

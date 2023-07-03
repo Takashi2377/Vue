@@ -33,6 +33,13 @@ export default {
       },
     });
 
+    watch(
+      [() => options.value.title, () => options.value.user.name],
+      (newVals, oldVals) => {
+        console.log(newVals, oldVals);
+      }
+    );
+
     // 同时监听 title 和 user.name
 
     return { messages, options };

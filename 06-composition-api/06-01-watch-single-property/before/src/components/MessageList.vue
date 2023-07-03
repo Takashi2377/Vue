@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 
 export default {
   setup() {
@@ -28,6 +28,13 @@ export default {
         return msg.content.includes(searchTerm.value);
       });
     });
+
+    watch(
+      () => searchTerm.value,
+      (newVal, oldVal) => {
+        console.log("搜索詞: ", newVal, oldVal);
+      }
+    );
 
     return { searchTerm, searchedMessages };
   },

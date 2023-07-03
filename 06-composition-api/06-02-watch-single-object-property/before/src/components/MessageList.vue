@@ -33,6 +33,20 @@ export default {
       },
     });
 
+    watch(
+      () => options.value.title,
+      (newVal, oldVal) => {
+        console.log(newVal, oldVal);
+      }
+    );
+
+    watch(
+      () => options.value.user.name,
+      (newVal, oldVal) => {
+        console.log(newVal, oldVal);
+      }
+    );
+
     return { messages, options };
   },
 };

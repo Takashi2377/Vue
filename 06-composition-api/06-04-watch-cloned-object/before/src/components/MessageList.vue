@@ -34,9 +34,9 @@ export default {
     });
 
     watch(
-      () => options.value,
+      () => JSON.parse(JSON.stringify(options.value)),
       (newVal, oldVal) => {
-        console.log(newVal, oldVal);
+        console.log(newVal, oldVal, newVal === oldVal);
       }
     );
 
