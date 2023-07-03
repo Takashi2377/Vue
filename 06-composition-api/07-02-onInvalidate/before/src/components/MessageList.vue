@@ -9,7 +9,9 @@
     <ul>
       <li v-for="msg in messages" :key="msg.id">{{ msg.content }}</li>
     </ul>
-    <button @click="options.title = '这是标题'">修改标题</button>
+    <button @click="options.title = '这是标题' + Math.random()">
+      修改标题
+    </button>
     <button @click="options.user.name = '李四'">修改用户</button>
   </div>
 </template>
@@ -33,10 +35,24 @@ export default {
       },
     });
 
-    watchEffect(() => {
-      console.log(options.value.title);
-      console.log(options.value.user.name);
-    });
+    // watchEffect((onInvalidate) => {
+    //   console.log(options.value.title);
+    //   console.log(options.value.user.name);
+
+    //   onInvalidate(() => {
+    //     console.log("做一個清理的動作。");
+    //   });
+    // });
+
+    watch(
+      () => options.value.title,
+      (newVal, oldVal, onInvalidate) => {
+        console.log(newVal, oldVal);
+        onInvalidate(() => {
+          console.log("清ㄎ一來");
+        });
+      }
+    );
 
     return { messages, options };
   },

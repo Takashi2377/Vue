@@ -33,6 +33,11 @@ export default {
       },
     });
 
+    watchEffect(() => {
+      console.log(options.value.title);
+      console.log(options.value.user.name);
+    });
+
     return { messages, options };
   },
 };
