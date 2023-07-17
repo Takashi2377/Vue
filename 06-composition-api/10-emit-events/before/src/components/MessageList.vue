@@ -6,6 +6,7 @@
         :key="msg.id"
         :id="msg.id"
         :msg="msg.content"
+        @remove="removeItem"
       ></MessageListItem>
     </ul>
   </div>
@@ -24,7 +25,11 @@ export default {
       { id: 4, content: "这是一条消息提醒4" },
     ]);
 
-    return { messages };
+    function removeItem(id) {
+      messages.value = messages.value.filter((msg) => msg.id !== id);
+    }
+
+    return { messages, removeItem };
   },
 };
 </script>
