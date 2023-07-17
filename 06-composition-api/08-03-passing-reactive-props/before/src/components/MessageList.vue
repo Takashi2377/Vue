@@ -15,7 +15,17 @@ import MessageListItem from "./MessageListItem.vue";
 
 export default {
   props: ["messages"],
+
   setup(props) {
+    console.log(props.messages);
+    const { messages } = props;
+    watch(
+      () => messages,
+      (newM) => {
+        console.log(newM.length);
+      },
+      { deep: true } //監聽 數組 或 物件 中的資料
+    );
     return {};
   },
   components: { MessageListItem },

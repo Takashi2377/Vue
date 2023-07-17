@@ -2,6 +2,7 @@
   <main>
     <div class="container">
       <MessageList :messages="messages" />
+      <button @click="messages.pop()">del</button>
     </div>
   </main>
 </template>

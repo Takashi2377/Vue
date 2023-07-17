@@ -8,6 +8,10 @@ export default {
   props: ["msg"],
   setup(props) {
     // console.log(props.msg);
+    const { msg } = toRefs(props);
+    watch(msg, (newMsg) => {
+      console.log(newMsg);
+    });
     return {};
   },
 };

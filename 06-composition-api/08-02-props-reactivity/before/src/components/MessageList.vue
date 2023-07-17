@@ -23,6 +23,10 @@ export default {
       { id: 4, content: "这是一条消息提醒4" },
     ]);
 
+    setTimeout(() => {
+      messages.value[1].content = "这是一条消息提醒2 - 修改";
+    }, 1500);
+
     return { messages };
   },
 };
