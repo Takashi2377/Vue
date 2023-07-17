@@ -26,7 +26,7 @@ const app = Vue.createApp({
     newBlog(newVal) {
       setTimeout(() => {
         this.blogPosts.push(newVal);
-      }, 2000);
+      }, 1000);
     },
   },
 });
