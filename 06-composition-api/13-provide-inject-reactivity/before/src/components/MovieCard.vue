@@ -11,12 +11,15 @@ export default {
     MovieItem,
   },
   setup() {
-    const movie = {
+    const movie = ref({
       title: "电影",
       description: "这是一段电影的描述",
-    };
+    });
 
-    provide("movie", movie.title);
+    provide("title", toRef(movie.value, "title"));
+    setTimeout(() => {
+      movie.value.title = "電影--修改";
+    }, 1500);
 
     return { movie };
   },
