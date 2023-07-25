@@ -1,15 +1,21 @@
-<template>
+<!-- <template>
   <header>
     <slot name="header"></slot>
   </header>
   <main>
     <slot></slot>
   </main>
-</template>
+</template> -->
 
 <script>
+import { h } from "vue";
 export default {
-  setup(props) {},
+  setup(props, { slots }) {
+    return () => [
+      h("header", [], slots.header()),
+      h("main", [], slots.default()),
+    ];
+  },
 };
 </script>
 
