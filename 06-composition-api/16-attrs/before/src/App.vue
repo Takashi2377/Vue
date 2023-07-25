@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <MessageList class="messageList" />
+      <MessageList class="messageList" :tt="test" data-title="消息列表" />
     </div>
   </main>
 </template>
@@ -14,7 +14,15 @@ export default {
   components: {
     MessageList,
   },
-  setup() {},
+  setup() {
+    const test = ref("test");
+
+    setTimeout(() => {
+      test.value = "changed";
+    }, 2000);
+
+    return { test };
+  },
 };
 </script>
 

@@ -10,18 +10,25 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import MessageListItem from "./MessageListItem.vue";
 
 export default {
   components: { MessageListItem },
-  setup(props) {
+  setup(props, { attrs }) {
     const messages = ref([
       { id: 1, content: "这是一条消息提醒1" },
       { id: 2, content: "这是一条消息提醒2" },
       { id: 3, content: "这是一条消息提醒3" },
       { id: 4, content: "这是一条消息提醒4" },
     ]);
+    console.log(attrs);
+    console.log(attrs.class);
+    console.log(attrs["data-title"]);
+
+    watchEffect(() => {
+      console.log(attrs.tt);
+    });
 
     return { messages };
   },
