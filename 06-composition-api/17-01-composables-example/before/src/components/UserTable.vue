@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="sortByKey('username', 'desc')">排序</button>
     <table>
       <thead>
         <th>ID</th>
@@ -23,8 +24,24 @@
   </div>
 </template>
 <script>
+import useListData from "../composables/useListData";
+
 export default {
-  setup() {},
+  setup() {
+    const {
+      data: users,
+      removeItem: removeUser,
+      sortByKey,
+    } = useListData([
+      { id: 1, username: "张三", email: "san@163.com", phone: "12345678901" },
+      { id: 2, username: "李四", email: "si@163.com", phone: "13355554444" },
+      { id: 3, username: "王五", email: "wu@163.com", phone: "15533229988" },
+      { id: 4, username: "赵六", email: "liu@163.com", phone: "16677889932" },
+      { id: 5, username: "钱七", email: "qi@163.com", phone: "17711225577" },
+    ]);
+
+    return { users, removeUser, sortByKey };
+  },
 };
 </script>
 <style scoped>

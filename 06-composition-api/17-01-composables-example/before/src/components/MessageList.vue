@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="sortByKey('content', 'desc')">排序</button>
     <ul>
       <MessageListItem
         v-for="msg in messages"
@@ -14,23 +15,22 @@
 <script>
 import { ref, watch, watchEffect } from "vue";
 import MessageListItem from "./MessageListItem.vue";
+import useListData from "../composables/useListData";
 
 export default {
   components: { MessageListItem },
   setup(props) {
-    const messages = ref([
+    const {
+      data: messages,
+      removeItem: removeMessage,
+      sortByKey,
+    } = useListData([
       { id: 1, content: "这是一条消息提醒1" },
       { id: 2, content: "这是一条消息提醒2" },
       { id: 3, content: "这是一条消息提醒3" },
       { id: 4, content: "这是一条消息提醒4" },
     ]);
-
-    function removeMessage(id) {
-      // console.log(id);
-      messages.value = messages.value.filter((msg) => msg.id !== id);
-    }
-
-    return { messages, removeMessage };
+    return { messages, removeMessage, sortByKey };
   },
 };
 </script>
