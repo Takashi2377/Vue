@@ -11,27 +11,20 @@
     </ul>
   </div>
 </template>
-<script>
+<script setup>
 import { ref, watch, watchEffect } from "vue";
 import MessageListItem from "./MessageListItem.vue";
 
-export default {
-  components: { MessageListItem },
-  setup(props) {
-    const messages = ref([
-      { id: 1, content: "这是一条消息提醒1" },
-      { id: 2, content: "这是一条消息提醒2" },
-      { id: 3, content: "这是一条消息提醒3" },
-      { id: 4, content: "这是一条消息提醒4" },
-    ]);
+const messages = ref([
+  { id: 1, content: "这是一条消息提醒1" },
+  { id: 2, content: "这是一条消息提醒2" },
+  { id: 3, content: "这是一条消息提醒3" },
+  { id: 4, content: "这是一条消息提醒4" },
+]);
 
-    function removeMessage(id) {
-      messages.value = messages.value.filter((msg) => msg.id !== id);
-    }
-
-    return { messages, removeMessage };
-  },
-};
+function removeMessage(id) {
+  messages.value = messages.value.filter((msg) => msg.id !== id);
+}
 </script>
 <style scoped>
 div {

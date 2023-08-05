@@ -6,15 +6,8 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import MessageList from "./components/MessageList.vue";
-
-export default {
-  components: {
-    MessageList,
-  },
-  setup() {},
-};
 </script>
 
 <style>
