@@ -9,7 +9,8 @@ const notes = ref([]);
 
 onMounted(async () => {
   const res = await axios.get("http://localhost:3000/notes");
-  notes.value = res.data;
+  // notes.value = res.data;
+  console.log(res);
 });
 </script>
 
