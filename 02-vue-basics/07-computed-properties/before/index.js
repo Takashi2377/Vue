@@ -7,7 +7,7 @@ const app = Vue.createApp({
   },
   computed: {
     label() {
-      return this.showAnswer ? "隱藏答案" : "顯示答案";
+      return this.showAnswer ? "HideAnswer" : "ShowAnswer";
     },
   },
 });

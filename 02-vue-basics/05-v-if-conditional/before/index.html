@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <p v-if="books.length == 0">目前沒有任何書籍</p>
+      <p v-if="books.length == 0">啥都沒有</p>
       <h2 v-else-if="books.length == 1">{{books[0]}}</h2>
       <ul v-else>
-        <li v-for="book in books">{{book}}</li>
+        <li v-for="(book,index) in books">{{index+1}}.{{book}}</li>
       </ul>
     </div>
     <script src="index.js"></script>

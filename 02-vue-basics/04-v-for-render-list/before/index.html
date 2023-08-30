@@ -11,8 +11,8 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for="(todo,index)  in todos">
-          <input type="checkbox" :checked="todo.complete" />
+        <li v-for="(todo,index) in todos">
+          <input type="checkbox" :checked="todo.complete" />{{index+1}}.
           {{todo.content}}
         </li>
       </ul>

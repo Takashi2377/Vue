@@ -19,12 +19,13 @@ const app = Vue.createApp({
   },
   watch: {
     showAnswer(newVal, oldVal) {
-      if (newVal) {
+      if (newVal == true) {
         this.countDown = 5;
         if (this.timer) {
           clearInterval(this.timer);
           this.timer = null;
         }
+
         this.timer = setInterval(() => {
           this.countDown -= 1;
           if (this.countDown == 0) {
@@ -33,6 +34,7 @@ const app = Vue.createApp({
             this.timer = null;
           }
         }, 1000);
+        console.log("7777");
       }
     },
   },

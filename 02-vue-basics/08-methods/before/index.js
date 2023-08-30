@@ -11,7 +11,7 @@ const app = Vue.createApp({
     },
   },
   methods: {
-    toggleAnswer() {
+    toggle() {
       this.showAnswer = !this.showAnswer;
     },
   },
