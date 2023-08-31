@@ -11,11 +11,13 @@ const app = Vue.createApp({
       newBlog: "",
     };
   },
+  //將data中的資料做計算&包裝，通常不會真的修改資料
   computed: {
     count() {
       return this.blogPosts.length;
     },
   },
+  //根據監聽到的屬性變化，修改&更新data中的值
   watch: {
     blogPosts: {
       handler(newVal) {
@@ -26,7 +28,7 @@ const app = Vue.createApp({
     newBlog(newVal) {
       setTimeout(() => {
         this.blogPosts.push(newVal);
-      }, 1000);
+      }, 2000);
     },
   },
 });
