@@ -7,7 +7,10 @@ const app = Vue.createApp({
   },
   computed: {
     pStyle() {
-      return { color: "white", fontSize: this.fontSize + "px" };
+      return {
+        color: "violet",
+        fontSize: this.fontSize + "px",
+      };
     },
   },
 });

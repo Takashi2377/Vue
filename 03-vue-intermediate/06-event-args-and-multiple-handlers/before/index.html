@@ -15,7 +15,7 @@
           <li
             v-for="todo in todos"
             :key="todo.id"
-            @click="handleClick(todo.id,$event),showContent(todo.content)"
+            @click="handleClick(todo.id,$event),showContent(todo.content,$event)"
           >
             {{todo.content}}
           </li>

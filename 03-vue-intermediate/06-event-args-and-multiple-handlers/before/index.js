@@ -20,10 +20,10 @@ const app = Vue.createApp({
   },
   methods: {
     handleClick(id, e) {
-      alert(id + ", " + e.clientX + ", " + e.clientY);
+      alert(id + " , " + e.clientX + " , " + e.clientY);
     },
-    showContent(content) {
-      alert(content);
+    showContent(content, e) {
+      alert(content + e.target.innerHTML);
     },
   },
 });
