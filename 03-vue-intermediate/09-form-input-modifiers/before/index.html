@@ -15,6 +15,7 @@
         <p>{{ username }}</p>
         <input type="text" v-model.number="year" />
         <p>{{ typeof year }}</p>
+        <!-- trim 去除空格 , lazy輸入框失去焦點時才做同步 -->
       </div>
     </div>
     <script src="index.js"></script>

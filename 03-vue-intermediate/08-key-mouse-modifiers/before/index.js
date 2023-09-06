@@ -2,7 +2,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      comments: ["好", "非常好", "赞"],
+      comments: ["好好!", "超棒!", "讚讚!"],
       comment: "",
     };
   },

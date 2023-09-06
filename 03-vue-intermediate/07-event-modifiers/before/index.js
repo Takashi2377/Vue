@@ -4,10 +4,10 @@ const app = Vue.createApp({
     return {};
   },
   methods: {
-    handleULClick() {
+    handleUlClick() {
       alert(0);
     },
-    handleLIClick() {
+    handleLiClick() {
       alert(1);
     },
   },
