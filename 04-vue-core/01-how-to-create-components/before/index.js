@@ -2,12 +2,10 @@
 const app = Vue.createApp({});
 
 app.component("WordCount", {
-  template: `
-    <div>
-        <input v-model="content"/>
-        <p>一共輸入了 {{count}} 字數</p>
-    </div>
-    `,
+  template: `<div>
+  <input v-model="content"/>
+  <p>一共輸入了 {{count}} 個字數</p>
+  </div>`,
   data() {
     return {
       content: "",

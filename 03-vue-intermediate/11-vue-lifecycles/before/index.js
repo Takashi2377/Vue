@@ -6,14 +6,14 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    async fetchPosts() {
-      const res = await fetch("./posts.json");
-      const postsData = await res.json();
+    async fetchPost() {
+      let res = await fetch("./posts.json");
+      let postsData = await res.json();
       this.posts = postsData;
     },
   },
   created() {
-    this.fetchPosts();
+    this.fetchPost();
   },
 });
 const vm = app.mount("#app");
