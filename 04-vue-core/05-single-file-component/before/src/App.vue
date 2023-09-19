@@ -1,12 +1,13 @@
 <script>
+import WordCount from "./components/WordCount.vue";
 export default {
+  components: { WordCount },
 };
 </script>
 
 <template>
   <main>
-    <div>
-    </div>
+    <div><WordCount /></div>
   </main>
 </template>
 

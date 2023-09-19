@@ -1,11 +1,14 @@
 <template>
   <main>
     <div>
-      <MessageItem
+      <!-- <MessageItem
         v-for="message in messages"
-        :key="message.id"
-        v-bind="message"
-      />
+        :key="id"
+        :sender="'使用者: ' + message.sender"
+        :msg="'訊息: ' + message.msg"
+        :time="message.time"
+      /> -->
+      <MessageItem v-for="message in messages" :key="id" v-bind="message" />
     </div>
   </main>
 </template>

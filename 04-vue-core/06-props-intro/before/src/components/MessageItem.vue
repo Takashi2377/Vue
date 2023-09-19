@@ -8,6 +8,9 @@
 <script>
 export default {
   props: ["sender", "msg", "time"],
+  mounted() {
+    console.log(this.sender);
+  },
 };
 </script>
 <style scoped>
@@ -26,7 +29,7 @@ span {
   justify-self: end;
 }
 
-div>p:last-child {
+div > p:last-child {
   margin-top: 1em;
 }
 </style>

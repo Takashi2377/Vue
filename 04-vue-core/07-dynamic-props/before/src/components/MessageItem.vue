@@ -1,13 +1,13 @@
 <template>
   <div>
-    <p>{{ sender }}</p>
+    <p>{{ id }} : {{ sender }}</p>
     <span>{{ time }}</span>
     <p>{{ msg }}</p>
   </div>
 </template>
 <script>
 export default {
-  props: ["sender", "msg", "time"],
+  props: ["sender", "msg", "time", "id"],
   mounted() {
     console.log(this.sender);
   },
