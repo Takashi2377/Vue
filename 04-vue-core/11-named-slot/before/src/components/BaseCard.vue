@@ -22,4 +22,13 @@ export default {};
   font-weight: bold;
   margin-bottom: 12px;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 7rem;
+  margin: 2rem;
+  text-align: center;
+  justify-content: space-around;
+}
 </style>

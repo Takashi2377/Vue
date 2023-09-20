@@ -6,7 +6,7 @@
 <script>
 export default {
   props: ["link", "title"],
-  inheritAttrs: false,
+  inheritAttrs: false, // class:blogLink傳遞無效
   mounted() {
     console.log(this.$attrs.class);
   },
