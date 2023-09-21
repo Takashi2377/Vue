@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       movie: {
-        title: "电影",
+        title: "純愛戰神乙骨憂太",
         description: "这是一段电影的描述",
       },
     };

@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="contact in contacts" :key="contact.id">
-      <slot name="list" :contact="contact" />
+      <slot name="list" :con="contact" />
     </li>
   </ul>
 </template>
@@ -18,7 +18,7 @@ export default {
         {
           id: 2,
           name: "Karen Williams",
-          email: "kwill@domai.com",
+          email: "kwill@domain.com",
         },
         {
           id: 3,

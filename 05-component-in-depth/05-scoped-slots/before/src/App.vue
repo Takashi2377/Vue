@@ -6,9 +6,9 @@
         <p>{{ contact.email }}</p>
       </ContactList> -->
       <ContactList>
-        <template v-slot:list="props">
-          <p>{{ props.contact.name }}</p>
-          <p>{{ props.contact.email }}</p>
+        <template #list="props">
+          <p>{{ props.con.name }}</p>
+          <p>{{ props.con.email }}</p>
         </template>
       </ContactList>
     </div>
