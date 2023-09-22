@@ -1,7 +1,7 @@
 <template>
   <span class="text">
     <slot />
-    <a href="#">非根元素的其他元素</a>
+    <a href="#">子組件中的其他元素(非根元素)</a>
   </span>
 </template>
 <script>
@@ -9,6 +9,6 @@ export default {};
 </script>
 <style scoped>
 :slotted(div) {
-  color: rgb(137, 53, 53);
+  color: rgb(173, 185, 81);
 }
 </style>

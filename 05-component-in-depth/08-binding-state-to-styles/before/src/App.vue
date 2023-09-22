@@ -4,7 +4,7 @@
     <div class="control">
       <input type="range" min="0" max="360" v-model="degree" />
     </div>
-    <p>当前角度：{{ degree }}</p>
+    <p>Degree：{{ degree }}</p>
   </main>
 </template>
 
@@ -60,9 +60,10 @@ main {
   width: 250px;
   height: 250px;
   border-radius: 8px;
-  background-color: hsl(280deg, 100%, 60%);
+  background-color: hsl(240, 26%, 65%);
   box-shadow: 0 0 24px hsl(280deg, 100%, 70%, 0.5);
   transform: rotate(v-bind(degreeStr));
+  transition: all 0.3s;
 }
 
 .control {

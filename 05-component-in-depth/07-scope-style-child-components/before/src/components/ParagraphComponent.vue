@@ -1,7 +1,7 @@
 <template>
   <p><TextComponent>一些文字</TextComponent></p>
   <p>
-    <TextComponent><div>slot 中的其他文字</div></TextComponent>
+    <TextComponent><div>另一個slot中的文字</div></TextComponent>
   </p>
 </template>
 <script>
@@ -14,22 +14,24 @@ export default {
 </script>
 <style scoped>
 p {
-  background-color: rgb(74, 74, 124);
-  padding: 1em;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  background-color: rgb(69, 77, 200);
+  padding: 3rem;
+  border-radius: 9px;
+  margin-bottom: 2rem;
 }
 
 .text {
-  color: rgb(74, 156, 133);
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .text :deep(a) {
+  color: rgb(186, 95, 90);
   display: block;
+  font-size: 2rem;
   text-decoration: none;
-  color: rgb(80, 180, 137);
 }
-/* .text div {
-  color: rgb(241, 249, 28);
-} */
 </style>
