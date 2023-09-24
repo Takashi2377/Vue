@@ -44,6 +44,7 @@ input {
 select {
   border: 1px solid hsl(280deg, 50%, 50%);
   background: none;
+  background-color: black;
   color: white;
   padding: 6px;
   border-radius: 4px;
