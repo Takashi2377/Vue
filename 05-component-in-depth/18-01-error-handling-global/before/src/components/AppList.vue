@@ -11,7 +11,7 @@ export default {
     AppListItem,
   },
   mounted() {
-    throw new Error("發生異常");
+    throw new Error("發生錯誤!");
   },
 };
 </script>

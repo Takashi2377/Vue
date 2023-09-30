@@ -18,6 +18,7 @@ export default {
   },
   errorCaptured(err, instance, info) {
     this.error = true;
+    // return false;
   },
 };
 </script>

@@ -7,7 +7,7 @@ export default {
     return h("div", { class: "card" }, [
       h("div", { class: "title" }, this.title),
       h("div", { class: "content" }, this.$slots.default()),
-      [1, 2, 3, 4].map((item) => h("h" + item, {}, item)),
+      [1, 2, 3, 4, 5].map((item) => h("h" + item, {}, "h" + item + "標題")),
     ]);
   },
 };

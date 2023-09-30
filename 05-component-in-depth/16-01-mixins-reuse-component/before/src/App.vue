@@ -60,6 +60,11 @@ body {
 
 .container {
   width: 60vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -70,6 +75,22 @@ button {
     hsl(280deg, 50%, 50%)
   );
   padding: 1em 2em;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: 12px;
+  border-radius: 4px;
+  color: white;
+}
+
+a {
+  display: inline-block;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    hsl(240deg, 50%, 50%),
+    hsl(280deg, 50%, 50%)
+  );
+  padding: 0.7em 1.6em;
   margin-top: 24px;
   margin-right: 12px;
   border-radius: 4px;

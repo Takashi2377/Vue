@@ -1,9 +1,9 @@
 <template>
   <div>
+    <p>当前页：{{ currentPage }}</p>
     <a v-for="n in totalPage" @click.prevent="changePage(n)">
       {{ n }}
     </a>
-    <p>当前页：{{ currentPage }}</p>
   </div>
   <p v-if="showTotal">總計 : {{ totalPage }}</p>
 </template>
@@ -19,7 +19,7 @@ export default {
     };
   },
   mounted() {
-    console.log("執行2");
+    console.log("執行component中的mounted");
   },
 };
 </script>

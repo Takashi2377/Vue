@@ -11,7 +11,7 @@ const PaginationMixin = {
     },
   },
   mounted() {
-    console.log("執行");
+    console.log("執行mixin中的mounted");
   },
 };
 
