@@ -1,15 +1,21 @@
 <template>
   <div>
     <h2>{{ options.title }}</h2>
-    <p>
+    <!-- <p>
       用戶:{{ options.user.name }}, 活躍 {{ options.user.active ? "Y" : "N" }}
-    </p>
+    </p> -->
+    <ul>
+      <h3>先發選手:</h3>
+      <li v-for="name in options.user.names">{{ name }}</li>
+      <h3>替補選手:</h3>
+      <li>{{ options.user.substitute }}</li>
+    </ul>
     <ul>
       <li v-for="msg in messages" :key="msg.id">{{ msg.content }}</li>
     </ul>
     <button @click="messages = []">删除全部</button>
-    <button @click="options.title = '修改後標題'">修改標題</button>
-    <button @click="options.user.name = 'Keria'">修改姓名</button>
+    <button @click="options.title = '亞運大名單'">修改標題</button>
+    <button @click="options.user.names.push('Faker')">修改姓名</button>
   </div>
 </template>
 <script>
@@ -25,10 +31,10 @@ export default {
     ]);
 
     const options = reactive({
-      title: "消息列表",
+      title: "亞運冠軍名單",
       user: {
-        name: "Deft",
-        active: true,
+        names: ["Zeus", "Kanavi", "Chovy", "Ruler", "Keria"],
+        substitute: "Faker",
       },
     });
 

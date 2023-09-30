@@ -5,6 +5,10 @@
       <li v-for="msg in searchedMessages" :key="msg.id">{{ msg.content }}</li>
     </ul>
   </div>
+
+  <div>
+    <button @click="add">{{ count }}</button>
+  </div>
 </template>
 <script>
 import { ref, computed, watch } from "vue";
@@ -21,6 +25,11 @@ export default {
     const searchTerm = ref("");
 
     const searchedMessages = computed(() => {
+      // if (searchTerm === "") return messages.value;
+      // return messages.value.filter((msg) => {
+      //   return msg.content.includes(searchTerm.value);
+      // });
+
       if (searchTerm === "") return messages.value;
       return messages.value.filter((msg) => {
         return msg.content.includes(searchTerm.value);
@@ -31,7 +40,13 @@ export default {
       console.log("搜索詞: ", newVal, oldVal);
     });
 
-    return { messages, searchTerm, searchedMessages };
+    const count = ref(0);
+
+    function add() {
+      count.value++;
+    }
+
+    return { messages, searchTerm, searchedMessages, count, add };
   },
 };
 </script>
