@@ -40,7 +40,7 @@ export default {
     //   console.log(options.value.user.name);
 
     //   onInvalidate(() => {
-    //     console.log("做一個清理的動作。");
+    //     console.log("清起來!");
     //   });
     // });
 
@@ -49,7 +49,7 @@ export default {
       (newVal, oldVal, onInvalidate) => {
         console.log(newVal, oldVal);
         onInvalidate(() => {
-          console.log("清ㄎ一來");
+          console.log("清起來");
         });
       }
     );
