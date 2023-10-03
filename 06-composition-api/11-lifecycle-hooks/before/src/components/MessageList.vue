@@ -17,8 +17,9 @@ import MessageListItem from "./MessageListItem.vue";
 export default {
   components: { MessageListItem },
   setup(props) {
-    const loading = ref(false);
+    const loading = ref();
     const messages = ref([]);
+
     onMounted(() => {
       loading.value = true;
       setTimeout(() => {
@@ -31,6 +32,7 @@ export default {
         loading.value = false;
       }, 2000);
     });
+
     return { messages, loading };
   },
 };
