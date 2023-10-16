@@ -2,10 +2,14 @@
   <main>
     <div class="container">
       <div class="box"></div>
+      <input type="text" v-model="duration" />
     </div>
   </main>
 </template>
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+let duration = ref(10);
+</script>
 
 <style>
 * {
@@ -60,5 +64,16 @@ input {
   padding: 0.5em 1.4em;
   border-radius: 4px;
   color: white;
+
+  animation: rotate v-bind(duration + "s") linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
