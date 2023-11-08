@@ -1,12 +1,25 @@
 <template>
   <main>
     <div class="container">
-      <div></div>
+      <TransitionGroup name="fade" tag="div">
+        <RectangleBox
+          v-for="(num, index) in nums"
+          :key="num"
+          @click="nums.splice(index, 1)"
+          >{{ num }}</RectangleBox
+        >
+      </TransitionGroup>
+      <button @click="nums.splice(next % nums.length, 0, next++)">ADD</button>
     </div>
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import RectangleBox from "./components/RectangleBox.vue";
+const nums = ref([0, 1, 2, 3, 4, 5, 6]);
+const next = ref(7);
+</script>
 
 <style>
 * {
@@ -73,9 +86,11 @@ button {
 
 .fade-leave-from {
   opacity: 1;
+  transform: rotate(0deg);
 }
 .fade-leave-to {
   opacity: 0;
+  transform: rotate(480deg);
 }
 
 .fade-enter-active {
@@ -84,5 +99,9 @@ button {
 
 .fade-leave-active {
   transition: all 0.3s ease-in;
+}
+
+.fade-move {
+  transition: transform 0.3s ease-out;
 }
 </style>

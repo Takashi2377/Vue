@@ -4,7 +4,7 @@
       <button @click="show = !show">
         {{ show ? "隐藏" : "显示" }}
       </button>
-      <Transition name="fadeAndScale">
+      <Transition name="fadeAndScale" @enter="enter" @leave="leave">
         <div v-if="show" class="box"></div>
       </Transition>
     </div>
@@ -15,6 +15,28 @@
 import { ref, Transition } from "vue";
 
 const show = ref(false);
+
+function enter(el, done) {
+  const fadeIn = el.animate([{ opacity: 0 }, { opacity: 1 }], {
+    duration: 700,
+    easing: "ease-in-out",
+  });
+
+  fadeIn.onfinish = () => {
+    done();
+  };
+}
+
+function leave(el, done) {
+  const fadeOut = el.animate([{ opacity: 1 }, { opacity: 0 }], {
+    duration: 300,
+    easing: "ease-in",
+  });
+
+  fadeOut.onfinish = () => {
+    done();
+  };
+}
 </script>
 
 <style>
@@ -82,25 +104,25 @@ button {
   transition: all 0.7s ease-in-out;
 }
 
-.fadeAndScale-enter-from {
+/* .fadeAndScale-enter-from {
   opacity: 0;
 }
 
 .fadeAndScale-enter-to {
   opacity: 1;
-}
+} */
 
 .fadeAndScale-leave-active {
   transition: all 0.3s ease-in;
   animation: scale 0.3s ease-in reverse;
 }
 
-.fadeAndScale-leave-from {
+/* .fadeAndScale-leave-from {
   opacity: 1;
 }
 .fadeAndScale-leave-to {
   opacity: 0;
-}
+} */
 
 @keyframes scale {
   0% {

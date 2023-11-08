@@ -4,7 +4,11 @@
       <button @click="show = !show">
         {{ show ? "隐藏" : "显示" }}
       </button>
-      <Transition name="fadeAndScale">
+      <Transition
+        name="fadeAndScale"
+        enter-active-class="animate__animated animate__bounceIn"
+        leave-active-class="animate__animated animate__bounceOut"
+      >
         <div v-if="show" class="box"></div>
       </Transition>
     </div>
@@ -12,6 +16,7 @@
 </template>
 
 <script setup>
+import "animate.css";
 import { ref, Transition } from "vue";
 
 const show = ref(false);
@@ -76,7 +81,7 @@ button {
   border-radius: 4px;
   color: white;
 }
-
+/* 
 .fadeAndScale-enter-active {
   animation: scale 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
@@ -115,5 +120,5 @@ button {
   100% {
     transform: scale(1);
   }
-}
+} */
 </style>
