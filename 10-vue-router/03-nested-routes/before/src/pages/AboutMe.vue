@@ -2,6 +2,11 @@
   <div class="container">
     <p>Hi 你好！这是关于我的页面</p>
     <p>更多详情查看：</p>
+    <nav>
+      <router-link to="/about/work">工作經歷</router-link>
+      <router-link to="/about/education">教育經歷</router-link>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 <script>

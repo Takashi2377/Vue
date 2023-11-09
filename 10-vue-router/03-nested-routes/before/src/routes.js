@@ -13,6 +13,10 @@ const routes = [
   {
     path: "/about",
     component: AboutMe,
+    children: [
+      { path: "work", component: WorkExperience },
+      { path: "education", component: EducationExperience },
+    ],
   },
 ];
 

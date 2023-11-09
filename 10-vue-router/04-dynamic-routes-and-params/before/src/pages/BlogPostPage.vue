@@ -1,14 +1,25 @@
 <template>
   <article>
-    <h2>博客标题</h2>
-    <p>博客内容</p>
+    <h2>{{ blogPost.title }}</h2>
+    <p>{{ blogPost.body }}</p>
     <footer>
       <router-link to="/">回到主页</router-link>
     </footer>
   </article>
 </template>
 <script>
-export default {};
+import { getBlogPostById } from "../data/blogPosts";
+
+export default {
+  data() {
+    return {
+      blogPost: {},
+    };
+  },
+  created() {
+    this.blogPost = getBlogPostById(this.$route.params.postId);
+  },
+};
 </script>
 <style scoped>
 article {
