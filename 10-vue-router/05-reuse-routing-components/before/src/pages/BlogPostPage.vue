@@ -19,8 +19,23 @@ export default {
     return { blogPost: {} };
   },
   created() {
-    this.blogPost = getBlogPostById(this.$route.params.postId);
+    this.$watch(
+      () => this.$route.params,
+      function (params, oldParams) {
+        this.blogPost = getBlogPostById(params.postId);
+      },
+      { immediate: true }
+    );
   },
+
+  // watch: {
+  //   "$route.params": {
+  //     handler(params, oldParams) {
+  //       this.blogPost = getBlogPostById(params.postId);
+  //     },
+  //     immediate: true,
+  //   },
+  // },
 };
 </script>
 <style scoped>

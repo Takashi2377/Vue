@@ -9,9 +9,19 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
+    components: {
+      nav: NavBar,
+      default: HomePage,
+      footer: FooterView,
+    },
   },
   {
     path: "/about",
+    components: {
+      nav: NavBar,
+      default: AboutMe,
+      footer: FooterViewAbout,
+    },
   },
 ];
 
