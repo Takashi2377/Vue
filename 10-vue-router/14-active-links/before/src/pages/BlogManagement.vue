@@ -3,6 +3,7 @@
     <aside class="leftSideBar">
       <h2>博客管理</h2>
       <nav>
+        <router-link to="/blogs">回首頁</router-link>
         <router-link to="/blogs/new">添加博客</router-link>
         <router-link to="/blogs/details">博客详情</router-link>
       </nav>
@@ -39,12 +40,12 @@
   align-items: start;
 }
 
-.router-link-active {
+.router-link-exact-active {
   position: relative;
   color: hsl(280deg, 100%, 90%);
 }
 
-.router-link-active::before {
+.router-link-exact-active::before {
   content: "";
   position: absolute;
   width: 3px;

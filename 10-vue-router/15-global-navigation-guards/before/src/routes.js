@@ -41,4 +41,26 @@ const router = createRouter({
   routes,
 });
 
+const loggedIn = true;
+
+router.beforeEach((to, from) => {
+  // console.log(to, from);
+  if (to.path.startsWith("/blogs")) {
+    if (!loggedIn) {
+      return "/login";
+    }
+  }
+});
+
+router.beforeResolve((to, from) => {
+  // console.log(to, from);
+  if (to.path.startsWith("/blogs")) {
+    console.log("用戶已登入");
+  }
+});
+
+router.afterEach((to, from) => {
+  document.title = to.path;
+});
+
 export default router;

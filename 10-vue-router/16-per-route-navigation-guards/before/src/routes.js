@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
+const loggedIn = true;
+
 const routes = [
   {
     path: "/",
@@ -19,6 +21,7 @@ const routes = [
   {
     path: "/blogs",
     component: BlogManagement,
+    beforeEnter: [verify],
     children: [
       {
         path: "new",
@@ -30,10 +33,19 @@ const routes = [
       {
         path: "details/:postId",
         component: BlogDetails,
+        beforeEnter(to, from) {
+          console.log(to, from);
+        },
       },
     ],
   },
 ];
+
+function verify() {
+  if (!loggedIn) {
+    return "/login";
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(),

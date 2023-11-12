@@ -9,6 +9,21 @@ const routes = [
   {
     path: "/blogs",
     component: BlogManagement,
+    children: [
+      {
+        path: "new",
+        components: {
+          default: AddBlog,
+          rightSideBar: RightSidebar,
+        },
+      },
+      {
+        path: "details",
+        components: {
+          default: BlogDetails,
+        },
+      },
+    ],
   },
 ];
 
