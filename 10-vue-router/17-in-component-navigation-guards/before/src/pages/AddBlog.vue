@@ -3,16 +3,18 @@
     <label for="title">博客标题：</label>
     <input type="text" name="title" id="title" />
     <label for="content">博客内容：</label>
-    <textarea
-      name="content"
-      id="content"
-      cols="30"
-      rows="10"
-    ></textarea>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
   </form>
 </template>
 <script>
-export default {};
+export default {
+  beforeRouteLeave() {
+    const result = confirm("真的要走?");
+    if (!result) {
+      return false;
+    }
+  },
+};
 </script>
 <style scoped>
 form {

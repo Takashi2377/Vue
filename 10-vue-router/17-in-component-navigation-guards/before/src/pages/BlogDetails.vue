@@ -12,6 +12,19 @@ export default {
       blog: {},
     };
   },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      setTimeout(() => {
+        vm.blog = getBlogPostById(to.params.postId);
+      }, 1000);
+    });
+  },
+  beforeRouteUpdate(to) {
+    this.blog = {};
+    setTimeout(() => {
+      this.blog = getBlogPostById(to.params.postId);
+    }, 1000);
+  },
 };
 </script>
 <style scoped>

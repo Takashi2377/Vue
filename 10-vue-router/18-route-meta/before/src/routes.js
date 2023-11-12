@@ -27,10 +27,12 @@ const routes = [
           default: AddBlog,
           rightSideBar: RightSidebar,
         },
+        meta: { private: true },
       },
       {
         path: "details",
         component: BlogDetails,
+        meta: { private: true },
       },
     ],
   },
@@ -43,6 +45,10 @@ const router = createRouter({
 
 const loggedIn = false;
 
-router.beforeEach((to, from) => {});
+router.beforeEach((to, from) => {
+  if (to.meta.private && !loggedIn) {
+    return "/login";
+  }
+});
 
 export default router;
