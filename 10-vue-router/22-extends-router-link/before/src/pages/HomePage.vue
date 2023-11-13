@@ -1,11 +1,19 @@
 <template>
   <nav class="globalNav">
     <router-link to="/login">登录</router-link>
-    <router-link to="/blogs">博客管理</router-link>
+    <PrivateLink to="/blogs" private>博客管理</PrivateLink>
   </nav>
 </template>
 <script>
-export default {};
+import ButtonLink from "../components/ButtonLink.vue";
+import PrivateLink from "../components/PrivateLink.vue";
+
+export default {
+  components: {
+    ButtonLink,
+    PrivateLink,
+  },
+};
 </script>
 <style scoped>
 .globalNav {
