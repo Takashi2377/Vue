@@ -1,8 +1,20 @@
 <template>
-  <main></main>
+  <main><button @click="changeColor">RandomColor</button></main>
 </template>
 <script>
-export default {};
+export default {
+  computed: {
+    color() {
+      const colors = this.$store.state.color;
+      return `rgb(${colors.join(", ")})`;
+    },
+  },
+  methods: {
+    changeColor() {
+      this.$store.commit("randomColor");
+    },
+  },
+};
 </script>
 
 <style>
@@ -38,6 +50,7 @@ main {
   max-width: 100%;
   display: grid;
   place-items: center;
+  background-color: v-bind(color);
 }
 
 button {

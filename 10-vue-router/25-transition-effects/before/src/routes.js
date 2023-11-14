@@ -7,10 +7,16 @@ const routes = [
   {
     path: "/",
     component: BlogListPage,
+    meta: {
+      transition: "fade",
+    },
   },
   {
     path: "/:postId",
     component: BlogPostPage,
+    meta: {
+      transition: "fadeAndMove",
+    },
   },
 ];
 

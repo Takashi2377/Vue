@@ -1,7 +1,7 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
+  <router-view v-slot="{ Component, route }">
+    <transition :name="route.meta.transition || 'fade'" mode="out-in">
+      <component :is="Component" :key="route.path" />
     </transition>
   </router-view>
 </template>
@@ -58,7 +58,7 @@ a {
   transition: all 0.4s;
 }
 .fadeAndMove-enter-from {
-  transform: translateY(-10px);
+  transform: translateY(-77px);
   opacity: 0;
 }
 

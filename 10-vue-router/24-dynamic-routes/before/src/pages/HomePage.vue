@@ -1,6 +1,14 @@
 <template>
   <div class="container">
-    <nav class="globalNav"></nav>
+    <nav class="globalNav">
+      <router-link to="/">首頁</router-link>
+      <router-link
+        v-for="page in pages"
+        :to="page.pageUrl"
+        :key="page.pageUrl"
+        >{{ page.pageName }}</router-link
+      >
+    </nav>
     <main>
       <form @submit.prevent>
         <h2>添加页面</h2>
@@ -26,13 +34,21 @@
           placeholder="请输入页面内容"
           v-model="pageContent"
         ></textarea>
-        <button type="submit">提交</button>
+        <button type="submit" @click="handlePageSubmit">提交</button>
       </form>
-      <div></div>
+      <div>
+        <ul>
+          <li v-for="page in pages" :to="page.pageUrl" :key="page.pageUrl">
+            {{ page.pageName }}
+            <span @click="removePage(page.pageUrl)">刪除</span>
+          </li>
+        </ul>
+      </div>
     </main>
   </div>
 </template>
 <script>
+import PageTemplate from "../../../after/src/components/PageTemplate.vue";
 export default {
   data() {
     return {
@@ -42,7 +58,32 @@ export default {
       pages: [],
     };
   },
-  methods: {},
+  methods: {
+    handlePageSubmit() {
+      this.pages.push({
+        pageUrl: this.pageUrl,
+        pageName: this.pageName,
+        pageContent: this.pageContent,
+      });
+      this.$router.addRoute({
+        path: this.pageUrl,
+        name: this.pageUrl.slice(1),
+        component: PageTemplate,
+        props: {
+          pageContent: this.pageContent,
+        },
+      });
+      console.log(this.$router.getRoutes());
+    },
+
+    removePage(pageUrl) {
+      this.$router.removeRoute(pageUrl.slice(1));
+      this.pages.splice(
+        this.pages.findIndex((page) => page.pageUrl == pageUrl)
+      );
+      console.log(this.$router.getRoutes());
+    },
+  },
 };
 </script>
 <style scoped>
