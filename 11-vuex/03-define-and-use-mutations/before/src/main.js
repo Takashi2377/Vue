@@ -14,6 +14,17 @@ const store = createStore({
       },
     };
   },
+  mutations: {
+    addNum(state) {
+      state.num++;
+    },
+    pushToArr(state, payload) {
+      state.arr.push(payload.ele);
+    },
+    changeUserName(state, payload) {
+      state.user.name = payload.name;
+    },
+  },
 });
 
 const app = createApp(App);

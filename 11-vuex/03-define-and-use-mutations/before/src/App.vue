@@ -4,19 +4,27 @@
       <p>
         num: <span>{{ num }}</span>
       </p>
+      <button @click="addNum">Add</button>
       <p>
         arr: <span>{{ arr }}</span>
       </p>
+      <button @click="pushToArr({ ele: arr.length + 1 })">PushArr</button>
       <p>
         user: <span>{{ user }}</span>
       </p>
+      <button @click="changeUserName({ name: '羅傑貝果乾' })">
+        ChangeName
+      </button>
     </div>
   </main>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   computed: mapState(["num", "arr", "user"]),
+  methods: {
+    ...mapMutations(["addNum", "pushToArr", "changeUserName"]),
+  },
 };
 </script>
 

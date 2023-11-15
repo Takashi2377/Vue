@@ -1,13 +1,36 @@
 <template>
   <main>
-    <div></div>
+    <div>
+      str : <span>{{ str }}</span>
+    </div>
+    <div>
+      nl : <span>{{ nl }}</span>
+    </div>
+    <div>
+      bool : <span>{{ bool }}</span>
+    </div>
+    <div>
+      arr : <span>{{ arr }}</span>
+    </div>
+    <p>{{ roger }}</p>
   </main>
 </template>
 <script>
 import { mapState } from "vuex";
-export default {};
+export default {
+  // computed: mapState({
+  //   num: (state) => state.nl,
+  //   num: "nl",
+  //   count: "nl",
+  // }),
+  computed: {
+    ...mapState(["str", "nl", "bool", "arr"]),
+    roger() {
+      return "貝果乾";
+    },
+  },
+};
 </script>
-
 <style>
 * {
   box-sizing: border-box;

@@ -5,7 +5,7 @@ import App from "./App.vue";
 const store = createStore({
   state() {
     return {
-      num: 1,
+      nl: 87,
       str: "string",
       bool: true,
       arr: [1, 2, 3],
