@@ -9,26 +9,22 @@
       <router-link to="/"><TheIcon icon="home" /></router-link>
       <button><TheIcon icon="publish" /></button>
       <!-- dropdown -->
-      <!-- <div class="profileDropDown">
-        <img
-          src="../assets/avatarDefault.png"
-          width="42"
-          height="42"
-          style="background: #ccc"
-        />
-        <div class="dropDownMenu">
+      <div class="profileDropDown">
+        <TheAvatar :width="42" :height="42" style="cursor: pointer" />
+        <!-- <div class="dropDownMenu">
           <ul class="profileMenu">
             <li><router-link to="/profile">個人主頁</router-link></li>
             <li>退出登錄</li>
           </ul>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
 import TheIcon from "./TheIcon.vue";
+import TheAvatar from "./TheAvatar.vue";
 </script>
 
 <style scoped>
