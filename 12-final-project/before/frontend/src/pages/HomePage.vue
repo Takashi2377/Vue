@@ -32,12 +32,14 @@
         </div>
       </div>
     </div>
+    <PostDetails />
   </div>
 </template>
 
 <script setup>
 import TheAvatar from "../components/TheAvatar.vue";
 import TheIcon from "../components/TheIcon.vue";
+import PostDetails from "../components/PostDetails.vue";
 </script>
 
 <style scoped>
