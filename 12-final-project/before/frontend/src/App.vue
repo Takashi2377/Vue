@@ -1,12 +1,15 @@
 <template>
   <header class="header"><NavBar /></header>
-  <router-view></router-view>
+  <TheLayout>
+    <router-view></router-view>
+  </TheLayout>
 </template>
 
 <script setup>
 import "./assets/base.css";
 import TheIcon from "./components/TheIcon.vue";
 import NavBar from "./components/NavBar.vue";
+import TheLayout from "./components/TheLayout.vue";
 </script>
 
 <style scoped>

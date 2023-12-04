@@ -1,50 +1,42 @@
 <template>
-  <Teleport to="body">
-    <div class="modal">
-      <div class="backdrop"></div>
-      <div class="modalContent">
-        <button class="closeBtn"><TheIcon icon="close" /></button>
-        <div class="postDetails">
-          <img src="" alt="" class="postImage" />
-          <div class="postMeta">
-            <div class="author">
-              <TheAvatar />
-              <span>連小逼</span>
-            </div>
-            <pre class="postDesc">這是我新買的衣服</pre>
-            <div class="comments">
-              <div class="comment" v-for="n in 10">
-                <TheAvatar />
-                <span class="user">熊靖凱</span>
-                <span class="commentDate">2 days ago</span>
-                <p class="commentContent">他自己說不稀罕的</p>
-              </div>
-            </div>
-            <div class="actions">
-              <div class="postActions">
-                <TheIcon icon="like" /><span>7w</span>
-                <TheIcon icon="comment" /><span>7.7w</span>
-                <TheIcon icon="favorite" /><span>77w</span>
-              </div>
-              <span class="postPubDate">12h</span>
-              <input
-                type="text"
-                class="commentInput"
-                name="comment"
-                placeholder="為這則訊息發表想法!"
-              />
-              <button class="commentPubBtn">發表</button>
-            </div>
+  <TheModal>
+    <div class="postDetails">
+      <img src="" alt="" class="postImage" />
+      <div class="postMeta">
+        <div class="author">
+          <TheAvatar />
+          <span>連小逼</span>
+        </div>
+        <pre class="postDesc">這是我新買的衣服</pre>
+        <div class="comments">
+          <div class="comment" v-for="n in 10">
+            <TheAvatar />
+            <span class="user">熊靖凱</span>
+            <span class="commentDate">2 days ago</span>
+            <p class="commentContent">他自己說不稀罕的</p>
           </div>
+        </div>
+        <div class="actions">
+          <PostActions />
+          <span class="postPubDate">12h</span>
+          <input
+            type="text"
+            class="commentInput"
+            name="comment"
+            placeholder="為這則訊息發表想法!"
+          />
+          <button class="commentPubBtn">發表</button>
         </div>
       </div>
     </div>
-  </Teleport>
+  </TheModal>
 </template>
 
 <script setup>
 import TheIcon from "./TheIcon.vue";
 import TheAvatar from "./TheAvatar.vue";
+import PostActions from "../components/PostActions.vue";
+import TheModal from "./TheModal.vue";
 </script>
 <style scoped>
 .postDetails {
@@ -116,24 +108,9 @@ import TheAvatar from "./TheAvatar.vue";
   padding: 20px 24px 0 24px;
   row-gap: 16px;
 }
-.postActions {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  column-gap: 16px;
-  row-gap: 4px;
-}
-.postActions > svg {
-  width: 32px;
-  height: 32px;
-  transform: scale(0.8125);
-  grid-row: 1 / 2;
-  stroke: black;
-  cursor: pointer;
-}
 
-.postActions span {
-  font-size: 14px;
+.postActions > :deep(svg) {
+  transform: scale(0.8125);
 }
 
 .postPubDate {

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div>
     <div class="postList">
       <div class="postItem" v-for="n in 10">
         <img
@@ -14,17 +14,7 @@
             <TheAvatar />
             <span>張國棟</span>
             <span class="postPubDate">12hrs before</span>
-            <div class="postActions">
-              <TheIcon icon="like" fill="none" stroke="#000000" /><span
-                >7w</span
-              >
-              <TheIcon icon="comment" fill="none" stroke="#000000" /><span
-                >7.7w</span
-              >
-              <TheIcon icon="favorite" fill="none" stroke="#000000" /><span
-                >77w</span
-              >
-            </div>
+            <PostActions />
           </div>
           <div class="postDesc">
             <p>這到底甚麼閃現 吼吼吼吼吼</p>
@@ -32,7 +22,8 @@
         </div>
       </div>
     </div>
-    <PostDetails />
+    <!-- <PostDetails /> -->
+    <!-- <PostUpload /> -->
   </div>
 </template>
 
@@ -40,32 +31,14 @@
 import TheAvatar from "../components/TheAvatar.vue";
 import TheIcon from "../components/TheIcon.vue";
 import PostDetails from "../components/PostDetails.vue";
+import PostActions from "../components/PostActions.vue";
+import PostUpload from "../components/PostUpload.vue";
 </script>
 
 <style scoped>
-.content {
-  width: 80vw;
-  margin: 0 auto;
-  margin-top: 88px;
-  max-width: 1124px;
-}
 .postActions {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  column-gap: 16px;
-  row-gap: 4px;
-}
-
-.postActions > svg {
-  width: 32px;
-  height: 32px;
-  grid-row: 1 / 2;
-  cursor: pointer;
-}
-
-.postActions > span {
-  font-size: 14px;
+  grid-area: actions;
+  justify-self: end;
 }
 
 .postItem {
