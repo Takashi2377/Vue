@@ -7,7 +7,7 @@
       </label>
       <div class="postContent">
         <textarea class="postContentInput" placeholder="寫點什麼吧!"></textarea>
-        <button class="button pubBtn">發表</button>
+        <TheButton class="pubBtn">發表</TheButton>
       </div>
     </div>
   </TheModal>
@@ -16,6 +16,7 @@
 <script setup>
 import TheModal from "./TheModal.vue";
 import TheIcon from "./TheIcon.vue";
+import TheButton from "./TheButton..vue";
 </script>
 
 <style scoped>
@@ -67,13 +68,5 @@ import TheIcon from "./TheIcon.vue";
   position: relative;
   right: 24px;
   bottom: 18px;
-}
-
-.button {
-  border-radius: 10px;
-  background: rgb(0, 153, 255);
-  color: white;
-  padding: 0.4rem 1.5rem;
-  border: none;
 }
 </style>
